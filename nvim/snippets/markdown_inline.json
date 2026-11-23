@@ -1,0 +1,9 @@
+{	
+	"Link" : 		{"prefix" : "li",   "body" : "[$1]($0)"},
+	"References":		{"prefix" : "ref",  "body" : "[^$1^][$0]"},
+	"Cite": 		{"prefix" : "cite", "body" : "[$1]: $0 \"\""},
+	"Footnote": 		{"prefix" : "ft",   "body" : "[^$0]"},
+	"Mark":			{"prefix" : "mark", "body" : "[$0]{.mark}"},
+	"Number list" : 	{"prefix" : "nl",   "body" : "1. $0\n2. \n3. \n4. \n5. \n6. \n7. \n8. \n9. \n10. \n"},
+	"Code structure" : 	{"prefix" : "cs",   "body" : "```$0\n```"}
+}

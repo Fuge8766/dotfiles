@@ -1,0 +1,15 @@
+{
+  "Error check": 	{ "prefix":"iferr", 	"body":"if ${1:err} != nil {\n\treturn $1\n}\n$0"	},
+  "Interface": 		{ "prefix":"inter", 	"body":"type $1 interface {\n\t$0\n}"			},
+  "Struct": 		{ "prefix":"st", 	"body":"type $1 struct {\n\t$0\n}"			},
+  "Main template":	{ "prefix":"main", 	"body":"package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main () {\n\t$0\n}"},
+  "Function":		{ "prefix":"fn", 	"body":"func $1($2) $3{\n\t$0\n}"			},
+  "For":		{ "prefix":"for",	"body":"for $1;$2;$3 {\n\t$0\n}"			},
+  "For n":		{ "prefix":"fori",	"body":"for $1 := 0;$1 < $2;$1++ {\n\t$0\n}"			},
+  "For range":		{ "prefix":"ran",	"body":"for i,v := range $1 {\n\t$0\n}"			},
+  "If":			{ "prefix":"if",	"body":"if $1 {\n\t$0\n}"				},
+  "fmt Printf": 	{ "prefix":"pf",	"body":"fmt.Printf(\"$0\\n\")"					},
+  "fmt Println": 	{ "prefix":"pl",	"body":"fmt.Println(\"$0\\n\")"					},
+  "Go function": 	{ "prefix":"gofn",	"body":"go func() {\n$0\n}()"					}
+}
+
