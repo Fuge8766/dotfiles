@@ -1,0 +1,40 @@
+# Tags : #todo
+# Commands:
+# zk new -t "title"
+# zk jour
+# zk ed
+# zk list journal
+# link like [[title]] [[title-id]] [[title-id.md]]
+
+[note]
+language = "en"
+default-title = "Untitled"
+filename = "{{slug title}}-{{id}}"
+extension = "md"
+template = "default.md"
+id-charset = "hex"
+id-length = 4
+id-case = "lower"
+
+[group.journal]
+paths = ["journal/**"]
+[group.journal.note]
+filename = "{{format-date now '%Y-%m-%d'}}-{{id}}"
+template = "journal.md"
+
+[format.markdown]
+link-format = "wiki"
+
+[tool]
+editor = "neovide"
+pager = ""
+fzf-preview = "cat {-1}"
+
+[filter]
+journal = "--sort created journal"
+
+[alias]
+ed = 'zk edit --interactive'
+jour = 'zk new "./journal"'
+last = 'zk edit --limit 1 --sort modified-'
+todo = 'zk edit -i --tag "todo"'

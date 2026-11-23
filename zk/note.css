@@ -1,0 +1,77 @@
+@page {
+    size: a4;
+    margin: 10mm;
+
+    @bottom-center {
+        content: counter(page);
+        font-size: 10pt;
+	margin-bottom: 0.5cm;
+    }
+}
+
+@font-face {
+    font-family: "Cambria Math";
+    src: url("cambria-math.ttf");
+}
+
+body {
+    font-size: 12pt;
+    line-height: 1.15;
+}
+
+h1 {
+    color: #247ba0;
+    font-size: 25pt;
+}
+
+h2 {
+    color: #247ba0;
+    font-size: 20pt;
+}
+
+h3 {
+    color: #247ba0;
+    font-size: 15pt;
+}
+
+h4,h5,h6 {
+    color: #247ba0;
+}
+
+a {
+    color: #0000ff;
+}
+
+table, th, td {
+    border: 0.5px solid;
+}
+
+span.mark {
+    background-color: #fff1a8;
+}
+
+span.footnote {
+    font-size: 8pt;
+}
+
+span.footnote-backref {
+    display: inline;
+}
+
+span.blue {
+    color: #0000ff;
+}
+
+span.red {
+    color: #ff0000;
+}
+
+blockquote {
+    border-left: 2pt solid #aaa;
+    padding-left: 0.5em;
+    color: #555;
+}
+
+math {
+    font-family: "Cambria Math";
+}
