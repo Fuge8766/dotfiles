@@ -31,14 +31,15 @@ g.loaded_netrwPlugin = 1
 g.loaded_nvim_dir_plugin = 1
 g.loaded_tutor_mode_plugin = 1
 g.loaded_spellfile_plugin = 1
+o.path = ".," .. vim.fn.expand('$ZK_NOTEBOOK_DIR') -- gf to open zk note
 
 -- Plugin Manager
 vim.pack.add({ 'https://github.com/zuqini/zpack.nvim' })
 
--- Theme
+-- Theme & Language
 o.background = "dark"
-cmd("language en_US.utf8")
 o.guifont = "Lucida Console:h14"
+cmd("language en_US.utf8")
 
 -- Variables
 g.mapleader = ' '
@@ -79,8 +80,6 @@ end
 function emap(m, l, r, d)  -- expression --
 	vim.keymap.set(m, l, r, { silent = true, desc = d })
 end
-
--- Local Functions
 local function dupline()
 	vim.api.nvim_feedkeys("yy" .. vim.v.count1 .. "p", "n", true)
 end
@@ -118,7 +117,7 @@ local function close() --https://github.com/neovim/neovim/issues/19363#issuecomm
 	else
 	    vim.cmd('bdelete')
 	end
-	end
+end
 local function presentation()
 	if g.hideall == false then
 		g.lasthidestatus = {o.foldcolumn, o.relativenumber, o.number, o.showtabline}
@@ -153,8 +152,8 @@ map({'n','v'}, '<Space>', '<Nop>')
 map({'n','v','x'}, '<leader>y', '"+y', "Copy to clipboard")
 map({'n','v','x'}, '<leader>u', '"+p', "Paste to clipboard")
 map('n', '<leader>R', '<cmd>:e $MYVIMRC<cr>', "Edit init.lua")
-map('n', '<leader>S', function() MiniExtra.pickers.explorer({cwd= string.gsub(vim.fn.expand('$Snippet'),'\\','/') }) end, "Edit snippets")
-map('n', '<leader>P', function() MiniExtra.pickers.explorer({cwd= string.gsub(vim.fn.expand('$Plugin'),'\\','/') }) end, "Edit plugins spec")
+map('n', '<leader>S', function() MiniExtra.pickers.explorer({cwd= string.gsub(vim.fn.expand('./snippets'),'\\','/') }) end, "Edit snippets")
+map('n', '<leader>P', function() MiniExtra.pickers.explorer({cwd= string.gsub(vim.fn.expand('./lua/plugins'),'\\','/') }) end, "Edit plugins spec")
 map('n', '<leader>z', '`^', "Jump to insert mode last position")
 map('n', '<leader>v', '<C-w>v', "Split vertically")
 map('n', '<leader>s', '<C-w>s', "Split horizontally")
