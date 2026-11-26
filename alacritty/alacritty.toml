@@ -1,0 +1,107 @@
+[terminal]
+osc52 = "CopyPaste"
+
+[terminal.shell]
+program = "cmd /nologo /k"
+
+[window]
+decorations = "None"
+startup_mode = "Maximized"
+decorations_theme_variant = "Dark"
+
+[scrolling]
+history = 1000
+multiplier = 10
+
+[font]
+size = 20
+
+[font.normal]
+family = "Lucida Console"
+style = "Regular"
+
+[colors.primary]
+foreground = "#ffffff"
+background = "#000000"
+
+[colors.vi_mode_cursor]
+cursor = "#d8d8d8"
+
+[colors.search.matches]
+background = "#f7ca88"
+
+[colors.search.focused_match]
+background = "#7cafc2"
+
+[colors.cursor]
+text = "#181818"
+cursor = "#d8d8d8"
+
+[colors.normal]
+black = "#181818"
+red = "#ab4642"
+green = "#a1b56c"
+yellow = "#f7ca88"
+blue = "#7cafc2"
+magenta = "#ba8baf"
+cyan = "#86c1b9"
+white = "#d8d8d8"
+
+[colors.bright]
+black = "#585858"
+red = "#ab4642"
+green = "#a1b56c"
+yellow = "#f7ca88"
+blue = "#7cafc2"
+magenta = "#ba8baf"
+cyan = "#86c1b9"
+white = "#f8f8f8"
+
+[cursor]
+unfocused_hollow = false
+
+[cursor.style]
+blinking = "Off"
+
+[mouse]
+hide_when_typing = true
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "Q"
+mods = "Control"
+action = "Quit"
+
+[[keyboard.bindings]]
+key = "Enter"
+mods = "Control"
+action = "SpawnNewInstance"
+
+[[keyboard.bindings]]
+key = "Up"
+mods = "Control"
+action = "ScrollPageUp"
+
+[[keyboard.bindings]]
+key = "Down"
+mods = "Control"
+action = "ScrollPageDown"
+
+[[keyboard.bindings]]
+key = "Plus"
+mods = "Control"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Control"
+action = "DecreaseFontSize"
