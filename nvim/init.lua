@@ -38,7 +38,6 @@ vim.pack.add({ 'https://github.com/zuqini/zpack.nvim' })
 
 -- Theme & Language
 o.background = "dark"
-o.guifont = "Lucida Console:h14"
 cmd("language en_US.utf8")
 
 -- Variables
@@ -152,8 +151,8 @@ map({'n','v'}, '<Space>', '<Nop>')
 map({'n','v','x'}, '<leader>y', '"+y', "Copy to clipboard")
 map({'n','v','x'}, '<leader>u', '"+p', "Paste to clipboard")
 map('n', '<leader>R', '<cmd>:e $MYVIMRC<cr>', "Edit init.lua")
-map('n', '<leader>S', function() MiniExtra.pickers.explorer({cwd= string.gsub(vim.fn.expand('./snippets'),'\\','/') }) end, "Edit snippets")
-map('n', '<leader>P', function() MiniExtra.pickers.explorer({cwd= string.gsub(vim.fn.expand('./lua/plugins'),'\\','/') }) end, "Edit plugins spec")
+map('n', '<leader>S', function() MiniExtra.pickers.explorer({cwd= string.gsub(vim.fn.expand('$MYVIMRC/../snippets'),'\\','/') }) end, "Edit snippets")
+map('n', '<leader>P', function() MiniExtra.pickers.explorer({cwd= string.gsub(vim.fn.expand('$MYVIMRC/../lua/plugins'),'\\','/') }) end, "Edit plugins spec")
 map('n', '<leader>z', '`^', "Jump to insert mode last position")
 map('n', '<leader>v', '<C-w>v', "Split vertically")
 map('n', '<leader>s', '<C-w>s', "Split horizontally")
@@ -213,6 +212,7 @@ require('zpack').setup({
 
 -- Neovide
 if g.neovide == true then
+	o.guifont = "Lucida Console:h14"
 	g.neovide_scale_factor = 1.5
 	vim.keymap.set("n", "<C-=>", ":lua vim.g.neovide_scale_factor = math.min(vim.g.neovide_scale_factor + 0.1,  3.0)<CR>", { silent = true })
 	vim.keymap.set("n", "<C-->", ":lua vim.g.neovide_scale_factor = math.max(vim.g.neovide_scale_factor - 0.1,  0.1)<CR>", { silent = true })
